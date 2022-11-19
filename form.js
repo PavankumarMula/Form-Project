@@ -17,4 +17,18 @@ function userdetails(e){
     localStorage.setItem('time',time);
     localStorage.setItem('userobj',string_obj);
 }
+locatArray = new Array();
 
+    function save() {
+        var fieldValue = document.getElementById("input").value;
+        var locatItem = locatArray.push(fieldValue);
+
+        localStorage.setItem("text", JSON.stringify(locatArray));
+    }
+
+    window.onload = function load() {
+        var storedValue = JSON.parse(localStorage.getItem("text"));
+        if(storedValue) {
+            document.getElementById("display").innerHTML = (storedValue);
+        }
+    }
