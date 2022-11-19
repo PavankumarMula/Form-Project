@@ -4,6 +4,10 @@ var email=document.getElementById('email').value;
 var phone=document.getElementById('Phone').value;
 var date=document.getElementById('date').value;
 var time=document.getElementById('time').value;
+//storing as an object
+var inputs=document.querySelectorAll('input');
+console.log(inputs);
+var string_obj=JSON.stringify(inputs)
 
 function userdetails(e){
     localStorage.setItem('name',fullname);
@@ -11,4 +15,6 @@ function userdetails(e){
     localStorage.setItem('phone',phone);
     localStorage.setItem('date',date);
     localStorage.setItem('time',time);
+    localStorage.setItem('userobj',string_obj);
 }
+
